@@ -2,9 +2,10 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useQuery } from 'react-query';
 import axios from 'axios';
+import Link from 'next/link';
 
 /**
- * 
+ *
  * @returns fetched data from the given URL
  */
 const fetchData = async () => {
@@ -27,7 +28,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center px-20 text-center">
+      <main className="relative flex w-full flex-1 flex-col items-center px-20 text-center">
+        <Link href="/next">
+          <button className="fixed top-5 left-7 bg-green-400 shadow-lg rounded-full px-6 py-2 text-sm text-white hover:scale-105 transition-all duration-200 active:scale-100 active:bg-green-500 font-semibold ">
+            Next
+          </button>
+        </Link>
         <div className="flex flex-col gap-y-4">
           {isLoading ? (
             <p>loading...</p>
